@@ -12,6 +12,8 @@ let setUsername = () => {
 let showChat = () => {
   $('.container.login').css('display', 'none');
   $('.container.chat').css('display', 'block');
+
+  $('#messageInput').focus();
 };
 
 class Message {
@@ -88,6 +90,8 @@ let sendMessage = () => {
         socket.emit('newMessage', message);
         messageInput.val('');
     }
+
+    messageInput.focus();
 };
 
 socket.on('enterToRoom', function () {
@@ -107,6 +111,26 @@ socket.on('userJoined', function (data) {
 socket.on('userLeft', function (data) {
     let message = new Message();
     message.showSystemMessage(`${data.username} отключился`);
+});
+
+$(() => {
+    $('.container.login').on('keydown', (event) => {
+        if(event.keyCode === 13) {
+            setUsername();
+            event.preventDefault();
+            event.stopPropagation();
+        }
+            
+
+    }); 
+
+    $('.container.chat').on('keydown', (event) => {
+        if(event.keyCode === 13) {
+            sendMessage();
+            event.preventDefault();
+            event.stopPropagation();
+        }
+    });
 });
 
 
