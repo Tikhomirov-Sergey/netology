@@ -1,0 +1,51 @@
+<style>
+    .ng-dirty.ng-invalid {
+        border-color: #FA787E;
+    }
+
+    .ng-dirty.ng-valid {
+        border-color: #78FA89;
+    }
+
+</style>
+
+
+<form name="vm.userForm" novalidate>
+    <div class="form-group">
+        <label>Имя</label>
+        <input class="form-control" data-ng-model="vm.user.name" type="text" placeholder="Имя" required name="userName">
+    </div>
+
+    <div ng-messages="vm.userForm.userName.$error" ng-if="vm.userForm.userName.$dirty">
+
+        <div ng-message="required" class="alert alert-danger" role="alert">Поле не должно быть пустым</div>
+
+    </div>
+
+    <div class="form-group">
+        <label>Email</label>
+        <input class="form-control" data-ng-model="vm.user.email" type="email" placeholder="Имя" required name="email">
+    </div>
+
+    <div ng-messages="vm.userForm.email.$error" ng-if="vm.userForm.email.$dirty">
+
+        <div ng-message="required" class="alert alert-danger" role="alert">Поле не должно быть пустым</div>
+        <div ng-message="email" class="alert alert-danger" role="alert">Некорректный email</div>
+
+    </div>
+
+    <div class="form-group">
+        <label>Телефон</label>
+        <input class="form-control" data-ng-model="vm.user.phone" phone-format-validator placeholder="Имя" required ng-minlength="3" name="phone">
+    </div>
+
+    <div ng-messages="vm.userForm.phone.$error" ng-if="vm.userForm.phone.$dirty">
+
+        <div ng-message="required" class="alert alert-danger" role="alert">А где имя?</div>
+        <div ng-message="phone" class="alert alert-danger" role="alert">Номер должен иметь следующий формат: +7 919 000 00 00</div>
+
+    </div>
+
+    <button type="submit" class="btn btn-default" data-ng-disabled="vm.userForm.$invalid">Добавить
+    </button>
+</form>
