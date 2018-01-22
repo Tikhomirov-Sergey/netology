@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-md-8">
+
+        <div class="list-group">
+
+            <div class="list-group-item" ng-if="!users">
+                    <h4>
+                            Подождите, мы загружаем пользователей
+                    </h4>
+            </div>
+
+            <a href="#!/users/{{singleUser.id }}" class="list-group-item" ng-repeat="singleUser in users">
+
+                <h4>
+                    {{singleUser.username | uppercase }}
+                </h4>
+
+                <p>
+                    {{singleUser.name }}
+                </p>
+
+            </a>
+        </div>
+
+    </div>
+    <div class="col-md-4">
+
+            <div class="list-group-item" ng-if="!posts">
+                    <h4>
+                            Подождите, мы грузим посты
+                    </h4>
+            </div>
+
+        <div class="list-group">
+            <div class="list-group-item" ng-repeat="singlePost in posts">
+
+                <p>
+                    {{singlePost.title }}
+                </p>
+
+                </a>
+            </div>
+
+        </div>
+    </div>
