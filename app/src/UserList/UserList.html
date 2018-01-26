@@ -1,0 +1,10 @@
+<mat-list>
+    <mat-nav-list>
+        Список пользователей
+    </mat-nav-list>
+
+    <mat-list-item ng-repeat="singleUser in $ctrl.users">
+        <user-list-item user="singleUser"></user-list-item>
+    </mat-list-item>
+</mat-list>
+
