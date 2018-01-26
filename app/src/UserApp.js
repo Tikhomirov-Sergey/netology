@@ -1,4 +1,4 @@
-var userApp = angular.module('UserApp', ['ngRoute', 'ngResource', 'restangular', 'ui.bootstrap', 'ngMaterial']);
+var userApp = angular.module('UserApp', ['ngRoute', 'ngResource', 'restangular', 'ngMaterial']);
 
 angular.
 module('UserApp')

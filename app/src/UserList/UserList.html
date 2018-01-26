@@ -1,10 +1,8 @@
-<mat-list>
-    <mat-nav-list>
-        Список пользователей
-    </mat-nav-list>
 
-    <mat-list-item ng-repeat="singleUser in $ctrl.users">
-        <user-list-item user="singleUser"></user-list-item>
-    </mat-list-item>
-</mat-list>
-
+<md-list>
+    <md-list-item class="md-2-line" ng-repeat="singleUser in $ctrl.users">
+        <div class="md-list-item-text">
+            <user-list-item user="singleUser"></user-list-item>
+        </div>
+    </md-list-item>
+</md-list>
