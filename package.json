@@ -1,0 +1,21 @@
+{
+  "name": "netology-angular-pokemons",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "latest",
+    "chai": "latest",
+    "chai-http": "latest",
+    "supertest": "latest"
+  },
+  "dependencies": {
+    "express": "latest",
+    "body-parser": "latest"
+  }
+}
